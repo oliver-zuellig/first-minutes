@@ -50,7 +50,7 @@ export const copy = {
     meter: 'Winch',
   },
   finale: {
-    label: 'LiveView',
+    label: 'Live video to dispatch',
     headline: 'AED delivered.',
     lines: [
       'In the first minutes, every minute counts.',
