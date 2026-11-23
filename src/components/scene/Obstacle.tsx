@@ -9,14 +9,14 @@ function Gust() {
   return (
     <>
       <path
-        className="scene-gust-line scene-gust-line--amber"
+        className="scene-gust-line scene-gust-line--grey"
         d="M-22-7H6C11.5-7 14-10.5 12.5-13.5C11-16 7-15.5 6.5-12.5"
       />
       <path
         className="scene-gust-line scene-gust-line--white"
         d="M-18 1H16C21.5 1 23.5 5 21.5 8C19.5 10.5 15.5 9.5 15.5 7"
       />
-      <path className="scene-gust-line scene-gust-line--amber" d="M-14 9H2C5 9 6.5 11 5.5 13" />
+      <path className="scene-gust-line scene-gust-line--grey" d="M-14 9H2C5 9 6.5 11 5.5 13" />
     </>
   )
 }

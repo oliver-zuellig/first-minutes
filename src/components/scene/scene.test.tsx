@@ -6,6 +6,7 @@ import { Backdrop } from './Backdrop'
 import { Beacon } from './Beacon'
 import { Destination } from './Destination'
 import { Drone } from './Drone'
+import { Guide } from './Guide'
 import { Obstacle } from './Obstacle'
 
 const cases: [string, () => ReactElement][] = [
@@ -18,6 +19,14 @@ const cases: [string, () => ReactElement][] = [
   ['Obstacle crane', () => <Obstacle kind="crane" x={300} y={180} />],
   ['Beacon', () => <Beacon x={250} y={125} />],
   ['Destination', () => <Destination x={380} />],
+  [
+    'Guide ahead',
+    () => <Guide droneX={110} droneY={125} beaconX={600} beaconY={70} direction="up" />,
+  ],
+  [
+    'Guide in view',
+    () => <Guide droneX={110} droneY={125} beaconX={300} beaconY={125} direction="hold" />,
+  ],
 ]
 
 describe('scene artwork', () => {

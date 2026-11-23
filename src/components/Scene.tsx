@@ -1,4 +1,4 @@
-import type { Lane } from '../game/flight'
+import { beaconDirection, type Lane } from '../game/flight'
 import { WINCH_FULL } from '../game/reducer'
 import type { GameState } from '../game/types'
 import { AedBox } from './scene/AedBox'
@@ -6,6 +6,7 @@ import { Backdrop } from './scene/Backdrop'
 import { Beacon } from './scene/Beacon'
 import { Destination } from './scene/Destination'
 import { Drone } from './scene/Drone'
+import { Guide } from './scene/Guide'
 import { Obstacle } from './scene/Obstacle'
 
 /** Scene coordinates: the SVG view box is 480 × 270, the ground line at y = 232. */
@@ -66,6 +67,15 @@ export function Scene({ state, label, reducedMotion }: Props) {
             y={LANE_Y[approach.obstacleLane]}
           />
           <Beacon x={ahead(approach.beaconAt)} y={LANE_Y[approach.beaconLane]} />
+          {phase === 'flight' && (
+            <Guide
+              droneX={DRONE_X}
+              droneY={LANE_Y[flight.lane]}
+              beaconX={ahead(approach.beaconAt)}
+              beaconY={LANE_Y[approach.beaconLane]}
+              direction={beaconDirection(flight) ?? 'hold'}
+            />
+          )}
         </>
       )}
       {delivered && <AedBox x={DRONE_X} y={MARKER_Y - AED_HEIGHT} />}
