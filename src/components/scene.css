@@ -1,0 +1,327 @@
+/* Flat Nordic scene artwork for "First Minutes". All colours live here as --scene-* tokens. */
+:root {
+  --scene-sky-top: #b7cfdc;
+  --scene-sky-bottom: #f2ede3;
+  --scene-sun: #fbf3df;
+  --scene-cloud: #ffffff;
+  --scene-hill-far: #c3d3d6;
+  --scene-hill-mid: #a9c2bb;
+  --scene-tree-far: #94afa7;
+  --scene-ground: #a9c39b;
+  --scene-ground-edge: #93b287;
+  --scene-road: #d9d3c3;
+  --scene-road-mark: #f4f0e6;
+  --scene-pine: #4f7d66;
+  --scene-pine-shade: #3f6855;
+  --scene-trunk: #6b5a4a;
+  --scene-wall-birch: #eee9dd;
+  --scene-wall-ochre: #e2b98a;
+  --scene-wall-sea: #a9bfcc;
+  --scene-wall-rust: #c98f7a;
+  --scene-roof: #3d4b5e;
+  --scene-window: #f6e2ae;
+  --scene-door: #5a6878;
+  --scene-navy: #2e3d51;
+  --scene-navy-soft: #4a5b70;
+  --scene-drone-shell: #e9eef2;
+  --scene-rotor: rgba(46, 61, 81, 0.18);
+  --scene-cable: #2e3d51;
+  --scene-aed: #1f9d55;
+  --scene-aed-shade: #17834a;
+  --scene-white: #ffffff;
+  --scene-amber: #f0a53a;
+  --scene-amber-soft: #f8d690;
+  --scene-crane: #e3a63f;
+  --scene-crane-shade: #b98329;
+  --scene-bird: #34465a;
+  --scene-marker: #f4f0e6;
+  --scene-marker-ring: #1f9d55;
+}
+
+.scene-sky-top {
+  stop-color: var(--scene-sky-top);
+}
+.scene-sky-bottom {
+  stop-color: var(--scene-sky-bottom);
+}
+.scene-sun {
+  fill: var(--scene-sun);
+}
+.scene-cloud {
+  fill: var(--scene-cloud);
+  opacity: 0.75;
+}
+.scene-hill-far {
+  fill: var(--scene-hill-far);
+}
+.scene-hill-mid {
+  fill: var(--scene-hill-mid);
+}
+.scene-tree-far {
+  fill: var(--scene-tree-far);
+}
+.scene-ground {
+  fill: var(--scene-ground);
+}
+.scene-ground-edge {
+  fill: var(--scene-ground-edge);
+}
+.scene-road {
+  fill: var(--scene-road);
+}
+.scene-road-mark {
+  fill: var(--scene-road-mark);
+}
+.scene-pine {
+  fill: var(--scene-pine);
+}
+.scene-pine-shade {
+  fill: var(--scene-pine-shade);
+}
+.scene-trunk {
+  fill: var(--scene-trunk);
+}
+.scene-wall--birch {
+  fill: var(--scene-wall-birch);
+}
+.scene-wall--ochre {
+  fill: var(--scene-wall-ochre);
+}
+.scene-wall--sea {
+  fill: var(--scene-wall-sea);
+}
+.scene-wall--rust {
+  fill: var(--scene-wall-rust);
+}
+.scene-roof {
+  fill: var(--scene-roof);
+}
+.scene-window {
+  fill: var(--scene-window);
+}
+.scene-door {
+  fill: var(--scene-door);
+}
+
+/* Drone */
+.scene-drone {
+  transition: transform 180ms ease-out;
+}
+.scene-drone-body {
+  fill: var(--scene-navy);
+}
+.scene-drone-arm {
+  fill: var(--scene-navy-soft);
+}
+.scene-drone-shell {
+  fill: var(--scene-drone-shell);
+}
+.scene-drone-light {
+  fill: var(--scene-amber);
+}
+.scene-drone-skid {
+  fill: none;
+  stroke: var(--scene-navy-soft);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.scene-rotor-disc {
+  fill: var(--scene-rotor);
+}
+.scene-rotor {
+  fill: var(--scene-navy);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: scene-rotor-spin 140ms linear infinite;
+}
+.scene-cable {
+  stroke: var(--scene-cable);
+  stroke-width: 1;
+}
+.scene-drone-tilt {
+  transform-box: view-box;
+  transform-origin: 0 0;
+}
+.scene-drone--wobble {
+  animation: scene-wobble 520ms ease-in-out;
+}
+
+/* AED box */
+.scene-aed {
+  fill: var(--scene-aed);
+}
+.scene-aed-shade {
+  fill: var(--scene-aed-shade);
+}
+.scene-aed-handle {
+  fill: none;
+  stroke: var(--scene-aed-shade);
+  stroke-width: 1.5;
+}
+.scene-aed-heart {
+  fill: var(--scene-white);
+}
+.scene-aed-bolt {
+  fill: var(--scene-aed);
+}
+
+/* Obstacles */
+.scene-gust-line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 22 5;
+  animation: scene-gust-flow 1.1s linear infinite;
+}
+.scene-gust-line--amber {
+  stroke: var(--scene-amber);
+}
+.scene-gust-line--white {
+  stroke: var(--scene-white);
+}
+.scene-bird {
+  fill: none;
+  stroke: var(--scene-bird);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: scene-flap 700ms ease-in-out infinite alternate;
+}
+.scene-bird:nth-child(2) {
+  animation-delay: -250ms;
+}
+.scene-bird:nth-child(3) {
+  animation-delay: -480ms;
+}
+.scene-crane {
+  fill: var(--scene-crane);
+}
+.scene-crane-shade {
+  fill: var(--scene-crane-shade);
+}
+.scene-crane-lattice {
+  fill: none;
+  stroke: var(--scene-crane-shade);
+  stroke-width: 1;
+}
+.scene-crane-line {
+  fill: none;
+  stroke: var(--scene-navy-soft);
+  stroke-width: 1;
+}
+.scene-crane-weight {
+  fill: var(--scene-navy-soft);
+}
+
+/* Beacon */
+.scene-beacon-glow-inner {
+  stop-color: var(--scene-amber-soft);
+  stop-opacity: 0.95;
+}
+.scene-beacon-glow-outer {
+  stop-color: var(--scene-amber-soft);
+  stop-opacity: 0;
+}
+.scene-beacon {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: scene-pulse 1.6s ease-in-out infinite alternate;
+}
+.scene-beacon-ring {
+  fill: none;
+  stroke: var(--scene-amber);
+  stroke-width: 2;
+}
+.scene-beacon-ring-inner {
+  fill: none;
+  stroke: var(--scene-white);
+  stroke-width: 1.5;
+}
+.scene-beacon-core {
+  fill: var(--scene-white);
+}
+
+/* Destination */
+.scene-marker {
+  fill: var(--scene-marker);
+}
+.scene-marker-ring {
+  fill: none;
+  stroke: var(--scene-marker-ring);
+  stroke-width: 2;
+}
+.scene-marker-dot {
+  fill: var(--scene-marker-ring);
+}
+.scene-fence {
+  fill: var(--scene-wall-birch);
+}
+
+@keyframes scene-rotor-spin {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.25);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes scene-wobble {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  45% {
+    transform: rotate(6deg);
+  }
+  70% {
+    transform: rotate(-3deg);
+  }
+  85% {
+    transform: rotate(1.5deg);
+  }
+}
+@keyframes scene-gust-flow {
+  to {
+    stroke-dashoffset: -27;
+  }
+}
+@keyframes scene-flap {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0.45);
+  }
+}
+@keyframes scene-pulse {
+  from {
+    transform: scale(0.85);
+    opacity: 0.75;
+  }
+  to {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-drone {
+    transition: none;
+  }
+  .scene-rotor,
+  .scene-drone--wobble,
+  .scene-gust-line,
+  .scene-bird,
+  .scene-beacon {
+    animation: none;
+  }
+}
