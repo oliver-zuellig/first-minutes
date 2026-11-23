@@ -39,7 +39,7 @@ export const copy = {
     replay: 'Fly again',
   },
   flight: {
-    hint: 'Fly through the glowing beacons. Climb or descend to dodge what is in your lane.',
+    hint: 'Follow the amber arrow into the glowing ring to pick up a piece of my story.',
     keys: 'Keys: ↑ / ↓ or W / S',
     hit: 'Small detour. The drone steadies itself.',
     missed: 'Beacon missed. Circling back for it.',

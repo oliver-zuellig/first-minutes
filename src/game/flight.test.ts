@@ -6,6 +6,7 @@ import {
   SLOW_MS,
   SPEED,
   autopilotLane,
+  beaconDirection,
   createFlight,
   steer,
   stepFlight,
@@ -117,5 +118,19 @@ describe('steer', () => {
     expect(steer(steer(flight, 'up'), 'up').lane).toBe(0)
     expect(steer(flight, 'down').lane).toBe(2)
     expect(steer(steer(flight, 'down'), 'down').lane).toBe(2)
+  })
+})
+
+describe('beaconDirection', () => {
+  it('points to the lane of the next beacon', () => {
+    const flight = createFlight()
+    const lane = flight.approach!.beaconLane
+    expect(beaconDirection({ ...flight, lane })).toBe('hold')
+    if (lane > 0) expect(beaconDirection({ ...flight, lane: 0 })).toBe('down')
+    if (lane < 2) expect(beaconDirection({ ...flight, lane: 2 })).toBe('up')
+  })
+
+  it('has nothing to point at once all beacons are collected', () => {
+    expect(beaconDirection({ ...createFlight(), approach: null })).toBeNull()
   })
 })

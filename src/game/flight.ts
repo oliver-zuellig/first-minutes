@@ -138,3 +138,14 @@ export function stepFlight(flight: Flight, dtMs: number): { flight: Flight; even
 
   return { flight: moved, event: null }
 }
+
+/**
+ * Which way the pilot has to steer to meet the next beacon: 'up', 'down', or 'hold' when the
+ * drone is already in its lane. Null once there is no beacon left.
+ */
+export function beaconDirection(flight: Flight): 'up' | 'down' | 'hold' | null {
+  const { approach, lane } = flight
+  if (!approach) return null
+  if (approach.beaconLane === lane) return 'hold'
+  return approach.beaconLane < lane ? 'up' : 'down'
+}
