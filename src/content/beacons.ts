@@ -2,36 +2,58 @@ import type { Beacon } from './types'
 
 export const beacons: readonly Beacon[] = [
   {
-    id: 'javascript',
-    name: 'Beacon 1 · JavaScript',
-    headline: 'Familiar airspace',
+    id: 'paper-plane',
+    name: 'Paper plane',
+    headline: 'Where it all took off',
     story:
-      'JavaScript and Node.js have been part of my daily work for years. I still enjoy discovering what else I can build with them.',
+      "I've been fascinated by aviation for as long as I can remember. These days I fly drones myself.",
   },
   {
     id: 'control-system',
-    name: 'Beacon 2 · Control systems',
-    headline: 'Software that runs real things',
+    name: 'Control system',
+    headline: 'Still running',
     story:
-      'I moved our building management control system onto Docker and built the pipeline to deliver and update it. I learned that the work does not end when software is released.',
-  },
-  {
-    id: 'sweden',
-    name: 'Beacon 3 · Sweden',
-    headline: 'Already in Sweden',
-    story: 'Five years ago, living in Sweden felt far away. Now my family and I call Sweden home.',
+      "For almost ten years I built and maintained a building control system. Software isn't done when it ships. It's done when it keeps running.",
   },
   {
     id: 'curious-bug',
-    name: 'Beacon · Curious bug',
-    headline: 'A bug? Of course.',
+    name: 'Curious bug',
+    headline: 'A bug in the rotor? Of course.',
     story:
       "Sometimes the interesting part starts when something doesn't work. I like understanding why.",
+  },
+  // In reserve: not in the playthrough, ready to swap in.
+  {
+    id: 'plc-module',
+    name: 'PLC module',
+    headline: 'Hardware first',
+    story:
+      'I started as an automation technician, wiring PLCs and building automation. Then I taught myself software and never looked back.',
+  },
+  {
+    id: 'microcontroller',
+    name: 'Microcontroller',
+    headline: 'Tiny chip, big curiosity',
+    story:
+      'In my free time I tinker with microcontrollers, cameras and drones. I like knowing how things work off the screen, too.',
+  },
+  {
+    id: 'padlock',
+    name: 'Padlock',
+    headline: 'A safe flight path',
+    story:
+      'I completed a CAS in Cyber Security. Data deserves a safe flight path, just like drones do.',
+  },
+  {
+    id: 'northern-tailwind',
+    name: 'Northern tailwind',
+    headline: 'Already in Sweden',
+    story: "In July 2026, my family and I moved from Switzerland to Sweden. We're here to stay.",
   },
 ]
 
 /** The three beacons of a playthrough, in order. */
-export const playthrough: readonly string[] = ['javascript', 'control-system', 'sweden']
+export const playthrough: readonly string[] = ['paper-plane', 'control-system', 'curious-bug']
 
 export function getBeacon(id: string): Beacon {
   const found = beacons.find((b) => b.id === id)
